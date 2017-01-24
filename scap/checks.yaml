@@ -3,3 +3,11 @@ checks:
     type: nrpe
     stage: restart_service
     command: check_endpoints_aqs
+  depool:
+    type: command
+    stage: promote
+    command: depool-aqs
+  repool:
+    type: command
+    stage: restart_service
+    command: pool-aqs
