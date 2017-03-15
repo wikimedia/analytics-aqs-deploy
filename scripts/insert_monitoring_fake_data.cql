@@ -11,7 +11,7 @@
 -- Test URL: localhost:7232/analytics.wikimedia.org/v1/pageviews/aggregate/en.wikipedia/all-access/all-agents/hourly/1970010100/1970010100
 -- Expected result: {"items":[{"project":"en.wikipedia","access":"all-access","agent":"all-agents","granularity":"hourly","timestamp":"1970010100","views":0}]}
 
-INSERT INTO "local_group_default_T_pageviews_per_project"."data" (
+INSERT INTO "local_group_default_T_pageviews_per_project_v2"."data" (
   "_domain", project, access, agent, granularity, timestamp, "_tid", "_del", views, v
 ) VALUES (
     'analytics.wikimedia.org', 'en.wikipedia', 'all-access', 'all-agents', 'hourly', '1970010100', minTimeuuid('1970-01-01'), null, 0, 0
