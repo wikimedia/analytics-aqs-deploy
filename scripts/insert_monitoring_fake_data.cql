@@ -52,3 +52,15 @@ INSERT INTO "local_group_default_T_unique_devices"."data" (
 ) VALUES (
     'analytics.wikimedia.org', 'en.wikipedia', 'all-sites', 'daily', '19700101', minTimeuuid('1970-01-01'), null, 0
 );
+
+
+----------------------------------------------------------------------
+-- Per-project pagecounts data (legacy)
+-- Test URL: localhost:7232/analytics.wikimedia.org/v1/legacy/pagecounts/en.wikipedia/all-sites/daily/1970010100/1970010100
+-- Expected result: {"items":[{"project":"en.wikipedia","access-site":"all-sites","granularity":"daily","timestamp":"1970010100","count":0}]}
+
+INSERT INTO "local_group_default_T_lgc_pagecounts_per_project"."data" (
+  "_domain", project, "access-site", granularity, timestamp, "_tid", "_del", count
+) VALUES (
+    'analytics.wikimedia.org', 'en.wikipedia', 'all-sites', 'daily', '1970010100', minTimeuuid('1970-01-01'), null, 0
+);
