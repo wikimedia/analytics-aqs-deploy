@@ -41,6 +41,17 @@ INSERT INTO "local_group_default_T_top_pageviews"."data" (
     'analytics.wikimedia.org', 'en.wikipedia', 'all-access', '1970', '01', '01', minTimeuuid('1970-01-01'), null, '[{"article":"-","views":0,"rank":1}]'
 );
 
+----------------------------------------------------------------------
+-- Top by country data
+-- Test URL: localhost:7232/analytics.wikimedia.org/v1/pageviews/top-by-country/en.wikipedia/all-access/1970/01
+-- Expected result: {"items":[{"project":"en.wikipedia","access":"all-access","year":"1970","month":"01","countries":[{"country":"-","views":0,"rank":1}]}]}
+
+INSERT INTO "local_group_default_T_top_bycountry"."data" (
+  "_domain", project, access, year, month, "_tid", "_del", "countriesJSON"
+) VALUES (
+    'analytics.wikimedia.org', 'en.wikipedia', 'all-access', '1970', '01', minTimeuuid('1970-01-01'), null, '[{"country":"-","views":0,"rank":1}]'
+);
+
 
 ----------------------------------------------------------------------
 -- Unique-devices data
