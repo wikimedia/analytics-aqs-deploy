@@ -59,9 +59,9 @@ INSERT INTO "local_group_default_T_top_bycountry"."data" (
 -- Expected result: {"items":[{"project":"en.wikipedia","access-site":"all-sites","granularity":"daily","timestamp":"1970010100","devices":0}]}
 
 INSERT INTO "local_group_default_T_unique_devices"."data" (
-  "_domain", project, "access-site", granularity, timestamp, "_tid", "_del", devices
+  "_domain", project, "access-site", granularity, timestamp, "_tid", "_del", devices, underestimate, offset
 ) VALUES (
-    'analytics.wikimedia.org', 'en.wikipedia', 'all-sites', 'daily', '19700101', minTimeuuid('1970-01-01'), null, 0
+    'analytics.wikimedia.org', 'en.wikipedia', 'all-sites', 'daily', '19700101', minTimeuuid('1970-01-01'), null, 0, 0, 0
 );
 
 
