@@ -86,3 +86,14 @@ INSERT INTO "local_group_default_T_mediarequest_per_file"."data" (
 ) VALUES (
     'analytics.wikimedia.org', 'en.wikipedia', '-', 'daily', '1970010100', minTimeuuid('1970-01-01'), null, 0, 0
 );
+
+----------------------------------------------------------------------
+-- Per referer mediarequest data
+-- Test URL: localhost:7232/analytics.wikimedia.org/v1/mediarequests/aggregate/en.wikipedia/all-media-types/all-agents/daily/1970010100/1970010100
+-- Expected result: {"items":[{"referer":"en.wikipedia","media_type":"all-media-types","granularity":"daily","timestamp":"1970010100","agent":"all-agents","requests":0}]}
+
+INSERT INTO "local_group_default_T_mediarequest_per_referer"."data" (
+  "_domain", referer, media_type, agent, granularity, timestamp, "_tid", "_del", requests
+) VALUES (
+    'analytics.wikimedia.org', 'en.wikipedia', 'all-media-types', 'all-agents', 'daily', '1970010100', minTimeuuid('1970-01-01'), null, 0
+);
