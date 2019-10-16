@@ -106,5 +106,5 @@ INSERT INTO "local_group_default_T_mediarequest_per_referer"."data" (
 INSERT INTO "local_group_default_T_mediarequest_top_files"."data" (
   "_domain", referer, media_type, year, month, day, "_tid", "_del", "filesJSON"
 ) VALUES (
-    'analytics.wikimedia.org', 'en.wikipedia', 'all-media-types', 'all-agents', 'daily', '1970010100', minTimeuuid('1970-01-01'), null, '[{"file_path":"-","requests":0,"rank":1}]'
+    'analytics.wikimedia.org', 'en.wikipedia', 'all-media-types', '1970', '01', '01', minTimeuuid('1970-01-01'), null, '[{"file_path":"-","requests":0,"rank":1}]'
 );
